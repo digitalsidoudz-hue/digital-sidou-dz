@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Digital Sidou DZ</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Tahoma,sans-serif;
+background:#080d18;color:#fff;line-height:1.6
+}
+header{
+padding:22px 6%;display:flex;justify-content:space-between;
+align-items:center;border-bottom:1px solid #202a40;
+position:sticky;top:0;background:#080d18ee;backdrop-filter:blur(12px);
+z-index:10
+}
+.logo{font-size:24px;font-weight:bold}
+.logo span{color:#ff3977}
+nav a{color:#ddd;text-decoration:none;margin:0 8px}
+.hero{text-align:center;padding:70px 20px 45px}
+.badge{
+display:inline-block;padding:7px 15px;border-radius:30px;
+background:#14213b;color:#ff4b83;margin-bottom:18px
+}
+h1{font-size:42px;margin-bottom:15px}
+.hero p{color:#aeb7c9;max-width:650px;margin:auto;font-size:18px}
+.search{
+display:block;width:min(650px,90%);margin:30px auto 10px;
+padding:16px 20px;border-radius:15px;border:1px solid #293650;
+background:#111a2d;color:white;font-size:16px;outline:none
+}
+.categories{text-align:center;padding:10px 5% 30px}
+.cat{
+border:1px solid #293650;background:#111a2d;color:#ddd;
+padding:10px 18px;border-radius:25px;margin:5px;cursor:pointer
+}
+.products{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;padding:20px 6% 60px;max-width:1200px;margin:auto
+}
+.card{
+background:#111827;border:1px solid #26334c;border-radius:22px;
+padding:25px;transition:.25s
+}
+.card:hover{transform:translateY(-5px);border-color:#ff3977}
+.icon{font-size:42px;margin-bottom:15px}
+.card h2{font-size:21px;margin-bottom:8px}
+.card p{color:#9da8bb;min-height:50px}
+.price{font-size:25px;font-weight:bold;color:#ff4b83;margin:18px 0}
+.btn{
+display:block;text-align:center;text-decoration:none;
+background:#ff3977;color:white;padding:13px;border-radius:12px;
+font-weight:bold
+}
+footer{
+text-align:center;padding:35px 20px;border-top:1px solid #202a40;
+color:#8f9bb0
+}
+.whatsapp{
+position:fixed;bottom:20px;left:20px;background:#20c76a;color:white;
+width:58px;height:58px;border-radius:50%;display:flex;
+align-items:center;justify-content:center;font-size:28px;
+text-decoration:none;box-shadow:0 5px 20px #0008;z-index:20
+}
+@media(max-width:600px){
+h1{font-size:32px}
+header{padding:18px}
+nav{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Digital <span>Sidou</span> DZ</div>
+<nav>
+<a href="#products">المنتجات</a>
+<a href="#about">من نحن</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="badge">🔥 متجر رقمي جزائري</div>
+<h1>أفضل العروض الرقمية في مكان واحد</h1>
+<p>
+اكتشف Canva وAI Tools والقوالب والبطاقات الرقمية بأسعار مناسبة.
+اطلب منتجك بسهولة عبر WhatsApp.
+</p>
+
+<input id="search" class="search"
+placeholder="🔎 ابحث عن Canva، AI، Templates...">
+</section>
+
+<div class="categories">
+<button class="cat" onclick="filterProducts('all')">الكل</button>
+<button class="cat" onclick="filterProducts('design')">🎨 التصميم</button>
+<button class="cat" onclick="filterProducts('ai')">🤖 AI Tools</button>
+<button class="cat" onclick="filterProducts('templates')">📦 Templates</button>
+<button class="cat" onclick="filterProducts('games')">🎮 الألعاب</button>
+</div>
+
+<section id="products" class="products">
+
+<div class="card" data-cat="design">
+<div class="icon">🎨</div>
+<h2>Canva Pro</h2>
+<p>اشتراك Canva Pro للتصميم والقوالب الاحترافية.</p>
+<div class="price">1,500 دج</div>
+<a class="btn" href="https://wa.me/213675749128?text=السلام%20عليكم،%20أريد%20شراء%20Canva%20Pro">
+اطلب الآن
+</a>
+</div>
+
+<div class="card" data-cat="ai">
+<div class="icon">🤖</div>
+<h2>ChatGPT Plus</h2>
+<p>خدمة ChatGPT Plus حسب العرض المتوفر.</p>
+<div class="price">2,900 دج</div>
+<a class="btn" href="https://wa.me/213675749128?text=السلام%20عليكم،%20أريد%20شراء%20ChatGPT%20Plus">
+اطلب الآن
+</a>
+</div>
+
+<div class="card" data-cat="templates">
+<div class="icon">📦</div>
+<h2>Canva Templates</h2>
+<p>حزم قوالب جاهزة للسوشيال ميديا والتسويق والتصميم.</p>
+<div class="price">ابتداءً من 1,000 دج</div>
+<a class="btn" href="https://wa.me/213675749128?text=السلام%20عليكم،%20أريد%20حزمة%20Canva%20Templates">
+اطلب الآن
+</a>
+</div>
+
+<div class="card" data-cat="games">
+<div class="icon">🎮</div>
+<h2>Gift Cards</h2>
+<p>بطاقات رقمية حسب المنصة والقيمة المتوفرة.</p>
+<div class="price">ابتداءً من 1,000 دج</div>
+<a class="btn" href="https://wa.me/213675749128?text=السلام%20عليكم،%20أريد%20Gift%20Card">
+اطلب الآن
+</a>
+</div>
+
+<div class="card" data-cat="ai">
+<div class="icon">⚡</div>
+<h2>AI Tools</h2>
+<p>أدوات وخدمات ذكاء اصطناعي لصناع المحتوى والمصممين.</p>
+<div class="price">حسب الخدمة</div>
+<a class="btn" href="https://wa.me/213675749128?text=السلام%20عليكم،%20أريد%20معلومات%20عن%20AI%20Tools">
+اطلب الآن
+</a>
+</div>
+
+<div class="card" data-cat="templates">
+<div class="icon">📱</div>
+<h2>Social Media Pack</h2>
+<p>قوالب جاهزة لمنشورات وقصص السوشيال ميديا.</p>
+<div class="price">حسب الباقة</div>
+<a class="btn" href="https://wa.me/213675749128?text=السلام%20عليكم،%20أريد%20Social%20Media%20Pack">
+اطلب الآن
+</a>
+</div>
+
+</section>
+
+<section id="about" style="text-align:center;padding:30px 20px 70
